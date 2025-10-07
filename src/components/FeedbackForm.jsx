@@ -17,6 +17,7 @@ export function FeedbackForm() {
   const [formState, setFormState] = useState(initialFormState);
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
   const [statusMessage, setStatusMessage] = useState("");
+  const [touched, setTouched] = useState({ name: false, message: false });
 
   const isSubmitDisabled = useMemo(() => {
     return (
@@ -31,8 +32,32 @@ export function FeedbackForm() {
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleBlur = (event) => {
+    const { name } = event.target;
+    if (name === "name" || name === "message") {
+      setTouched((prev) => ({ ...prev, [name]: true }));
+    }
+  };
+
+  const isNameMissing = !formState.name.trim();
+  const isMessageMissing = !formState.message.trim();
+  const nameHasError = touched.name && isNameMissing;
+  const messageHasError = touched.message && isMessageMissing;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    const trimmedName = formState.name.trim();
+    const trimmedMessage = formState.message.trim();
+
+    if (!trimmedName || !trimmedMessage) {
+      setTouched((prev) => ({
+        ...prev,
+        name: prev.name || !trimmedName,
+        message: prev.message || !trimmedMessage,
+      }));
+      return;
+    }
 
     if (!RELAY_URL) {
       setStatus("error");
@@ -52,9 +77,9 @@ export function FeedbackForm() {
         submittedAt: new Date().toISOString(),
       },
       data: {
-        name: formState.name.trim(),
+        name: trimmedName,
         contact: formState.contact.trim() || undefined,
-        message: formState.message.trim(),
+        message: trimmedMessage,
       },
     };
 
@@ -97,24 +122,31 @@ export function FeedbackForm() {
         <span className="section__eyebrow">Ask or share</span>
         <h2>Send a question or feedback</h2>
         <p>
-          Drop in your question, request, or takeaway. Messages are forwarded to
-          my slack, so I can follow up quickly after the seminar.
+          Drop in your question, feedback, or takeaway. Messages are forwarded
+          to my slack, so I can follow up quickly after the seminar.
         </p>
       </div>
       <div className="feedback" data-animate>
         <form className="feedback__form" onSubmit={handleSubmit}>
           <div className="feedback__row">
-            <label className="feedback__field">
+            <label
+              className={`feedback__field ${
+                nameHasError ? "feedback__field--error" : ""
+              }`}>
               <span>Name *</span>
               <input
                 type="text"
                 name="name"
                 value={formState.name}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Your name"
                 required
                 autoComplete="name"
               />
+              {nameHasError ? (
+                <span className="feedback__error">Required field</span>
+              ) : null}
             </label>
             <label className="feedback__field">
               <span>Contact (optional)</span>
@@ -138,16 +170,23 @@ export function FeedbackForm() {
             </select>
           </label>
 
-          <label className="feedback__field">
+          <label
+            className={`feedback__field ${
+              messageHasError ? "feedback__field--error" : ""
+            }`}>
             <span>Message *</span>
             <textarea
               name="message"
               value={formState.message}
               onChange={handleChange}
+              onBlur={handleBlur}
               placeholder="Let me know what's on your mind"
               rows={5}
               required
             />
+            {messageHasError ? (
+              <span className="feedback__error">Required field</span>
+            ) : null}
           </label>
 
           <div className="feedback__actions">

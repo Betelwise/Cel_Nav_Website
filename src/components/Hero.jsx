@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-
+import heroImage from "../assets/Hero.png";
 const SEMINAR_START = new Date("2025-10-08T11:30:00+05:00");
 const SEMINAR_END = new Date("2025-10-09T12:40:00+05:00");
 
@@ -146,7 +146,7 @@ export function Hero() {
       <div className="hero__media">
         <div className="hero__glow" aria-hidden="true" />
         <img
-          src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80"
+          src={heroImage}
           alt="Night sky filled with stars above a calm horizon"
           className="hero__image"
           loading="lazy"

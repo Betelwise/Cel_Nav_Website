@@ -557,9 +557,26 @@ main {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.feedback__field--error input,
+.feedback__field--error textarea {
+  border-color: rgba(255, 118, 148, 0.65);
+  box-shadow: 0 0 0 2px rgba(255, 118, 148, 0.22);
+}
+
+.feedback__field--error > span:first-of-type {
+  color: rgba(255, 176, 199, 0.9);
+}
+
 .feedback__field textarea {
   resize: vertical;
   min-height: 160px;
+}
+
+.feedback__error {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 189, 208, 0.95);
 }
 
 .feedback__field input:focus,
@@ -832,7 +849,8 @@ main {
   }
 
   .media-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
   }
 
   .feedback__row {
@@ -883,5 +901,15 @@ main {
 
   .card-carousel {
     grid-auto-columns: 60%;
+  }
+
+  .media-gallery {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .media-card {
+    width: 95%;
+    margin-inline: auto;
   }
 }

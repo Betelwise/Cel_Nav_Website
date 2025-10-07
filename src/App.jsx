@@ -56,12 +56,12 @@ function App() {
 
       <main>
         <Hero />
-        <NavigationMethods />
         <DirectionTricks />
         <SeminarJourney />
+        <FeedbackForm />
         <BookShelf />
         <SoftwareShowcase />
-        <FeedbackForm />
+        <NavigationMethods />
         <MediaGallery />
         <Transcript />
       </main>

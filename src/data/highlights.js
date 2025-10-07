@@ -75,23 +75,94 @@ export const directionTricks = [
   },
 ];
 
+import greatCircleGIF from "../assets/greatCircleGIF.gif";
+import declinationGIF from "../assets/declinationGIF.gif";
+import gridExplainGIF from "../assets/gridExplainGIF.gif";
+import polarisExplainGIF from "../assets/polarisExplainGIF.gif";
+import angles from "../assets/angles.png";
+import angles2d from "../assets/angles2d.png";
+import reflectionTrick from "../assets/reflectionTrick.png";
+import sextant from "../assets/sextant.jpg";
+import kamal from "../assets/kamal.jpg";
+import sphericalTrig from "../assets/sphericalTrig.png";
+import sunStone from "../assets/sunStone.jpg";
+
 export const mediaItems = [
   {
     type: "image",
-    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
-    alt: "Night sky over the ocean with bright stars",
-    caption: "Star fields above a calm sea — your navigation chart at night.",
-  },
-  {
-    type: "gif",
-    src: "https://media.giphy.com/media/3oKIPtjElfqwMOTbH2/giphy.gif",
-    alt: "Animated rotating globe with latitude and longitude grid",
-    caption: "Visualizing latitude-longitude as a living grid.",
+    src: angles,
+    alt: "Celestial sphere showing altitude and azimuth angles",
+    caption:
+      "The celestial dome — showing how a star’s altitude and azimuth define its position in the sky relative to the observer.",
   },
   {
     type: "image",
-    src: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=80",
-    alt: "Sextant resting on a nautical chart",
-    caption: "Sextants translate star angles into precise fixes.",
+    src: angles2d,
+    alt: "2D diagram showing celestial triangle between star, zenith, and horizon",
+    caption:
+      "A simplified 2D view of the celestial triangle — the geometric foundation of celestial navigation.",
+  },
+  {
+    type: "gif",
+    src: gridExplainGIF,
+    alt: "Animated explanation of Earth's latitude and longitude grid",
+    caption:
+      "Earth’s coordinate grid — latitude and longitude lines mapping every point on the globe.",
+  },
+  {
+    type: "gif",
+    src: greatCircleGIF,
+    alt: "Animated great circle route",
+    caption:
+      "A great circle path — the shortest distance between two points on Earth, followed by aircraft and ships.",
+  },
+  {
+    type: "gif",
+    src: declinationGIF,
+    alt: "Animated diagram explaining celestial declination and Earth's tilt",
+    caption:
+      "Celestial declination — showing how a star’s position shifts with Earth’s axial tilt and orbit around the Sun.",
+  },
+  {
+    type: "gif",
+    src: polarisExplainGIF,
+    alt: "Animated explanation of finding Polaris using the Big Dipper",
+    caption:
+      "Using the Big Dipper to find Polaris — the North Star, which almost exactly marks true north.",
+  },
+  {
+    type: "image",
+    src: reflectionTrick,
+    alt: "Diagram showing reflection trick to measure equal altitudes",
+    caption:
+      "The equal-altitude reflection trick — a simple way to find local noon and direction without instruments.",
+  },
+  {
+    type: "image",
+    src: sextant,
+    alt: "Astronaut using sextant for navigation",
+    caption:
+      "A modern sextant in use — measuring the angle between celestial bodies and the horizon, a timeless navigation method.",
+  },
+  {
+    type: "image",
+    src: sphericalTrig,
+    alt: "Mathematical diagram of spherical trigonometry on Earth’s surface",
+    caption:
+      "Spherical trigonometry — the mathematical framework behind converting celestial angles into Earth coordinates.",
+  },
+  {
+    type: "image",
+    src: kamal,
+    alt: "Traditional navigation instrument Kamal made of wood and string",
+    caption:
+      "The Kamal — an ancient Arabian tool that measures the altitude of Polaris using a wooden plate and string knots.",
+  },
+  {
+    type: "image",
+    src: sunStone,
+    alt: "Person holding a sunstone crystal under sunlight",
+    caption:
+      "Viking sunstone — a polarizing crystal that reveals the Sun’s direction even through clouds, a brilliant example of early optical navigation.",
   },
 ];
