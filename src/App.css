@@ -242,11 +242,24 @@ main {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;
   border: 1px solid transparent;
+  gap: 0.45rem;
 }
 
 .button--primary {
   background: linear-gradient(120deg, #a06bff, #4ecbff);
   color: #0b1026;
+}
+
+.button--accent {
+  background: linear-gradient(135deg, #4ecbff 0%, #a16bff 52%, #ff6fb5 100%);
+  color: #041026;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 18px 32px rgba(80, 150, 255, 0.35);
+}
+
+.button--accent:hover,
+.button--accent:active {
+  box-shadow: 0 22px 40px rgba(255, 115, 197, 0.35);
 }
 
 .button--ghost {
@@ -436,6 +449,65 @@ main {
 .grid {
   display: grid;
   gap: 1rem;
+}
+
+.software-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.software-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.4rem;
+  border-radius: 22px;
+  background: rgba(10, 17, 39, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 36px rgba(6, 11, 24, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  min-height: 100%;
+}
+
+.software-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(114, 196, 255, 0.6);
+  box-shadow: 0 28px 48px rgba(8, 14, 32, 0.45);
+}
+
+.software-card__logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.software-card__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: rgba(5, 9, 22, 0.45);
+}
+
+.software-card h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.software-card p {
+  margin: 0;
+  color: rgba(217, 226, 255, 0.8);
+}
+
+.software-card__cta {
+  margin-top: auto;
 }
 
 .feedback {

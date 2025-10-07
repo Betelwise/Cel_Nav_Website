@@ -5,6 +5,7 @@ import { NavigationMethods } from "./components/NavigationMethods.jsx";
 import { DirectionTricks } from "./components/DirectionTricks.jsx";
 import { SeminarJourney } from "./components/SeminarJourney.jsx";
 import { BookShelf } from "./components/BookShelf.jsx";
+import { SoftwareShowcase } from "./components/SoftwareShowcase.jsx";
 import { MediaGallery } from "./components/MediaGallery.jsx";
 import { Transcript } from "./components/Transcript.jsx";
 import { Footer } from "./components/Footer.jsx";
@@ -59,6 +60,7 @@ function App() {
         <DirectionTricks />
         <SeminarJourney />
         <BookShelf />
+        <SoftwareShowcase />
         <FeedbackForm />
         <MediaGallery />
         <Transcript />

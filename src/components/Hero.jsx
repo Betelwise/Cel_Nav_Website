@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
-const SEMINAR_START = new Date("2025-10-07T11:30:00+05:00");
-const SEMINAR_END = new Date("2025-10-07T12:30:00+05:00");
+const SEMINAR_START = new Date("2025-10-08T11:30:00+05:00");
+const SEMINAR_END = new Date("2025-10-09T12:40:00+05:00");
 
 function formatDuration(ms) {
   const clampedMs = Math.max(ms, 0);
@@ -62,7 +62,7 @@ function getStatusInfo() {
     badgeText: "Starting soon",
     badgeVariant: "upcoming",
     statsValue: `Starts in ${untilStart}`,
-    statusNote: `Arrive early — doors open in ${untilStart}.`,
+    statusNote: `Arrive early — starting in ${untilStart}.`,
   };
 }
 
@@ -123,8 +123,12 @@ export function Hero() {
           <a className="button button--primary" href="#books">
             Download book pack
           </a>
-          <a className="button button--ghost" href="#feedback">
-            Ask a question
+          <a className="button button--accent" href="#feedback">
+            <span aria-hidden="true">💬</span>
+            Share feedback or ask
+          </a>
+          <a className="button button--ghost" href="#software">
+            Explore the software
           </a>
           <a className="button button--ghost" href="#transcript">
             Browse the transcript
