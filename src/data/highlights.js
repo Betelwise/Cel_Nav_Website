@@ -135,7 +135,7 @@ export const mediaItems = [
     src: reflectionTrick,
     alt: "Diagram showing reflection trick to measure equal altitudes",
     caption:
-      "The equal-altitude reflection trick — a simple way to find local noon and direction without instruments.",
+      "The equal-altitude reflection trick — a simple way to find height of object respect to horizon",
   },
   {
     type: "image",

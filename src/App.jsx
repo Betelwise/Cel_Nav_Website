@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
 import { Hero } from "./components/Hero.jsx";
+import { ContentNavigator } from "./components/ContentNavigator.jsx";
 import { NavigationMethods } from "./components/NavigationMethods.jsx";
 import { DirectionTricks } from "./components/DirectionTricks.jsx";
 import { SeminarJourney } from "./components/SeminarJourney.jsx";
@@ -56,6 +57,7 @@ function App() {
 
       <main>
         <Hero />
+        <ContentNavigator />
         <DirectionTricks />
         <SeminarJourney />
         <FeedbackForm />
