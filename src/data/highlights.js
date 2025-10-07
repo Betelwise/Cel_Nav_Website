@@ -75,92 +75,80 @@ export const directionTricks = [
   },
 ];
 
-import greatCircleGIF from "../assets/greatCircleGIF.gif";
-import declinationGIF from "../assets/declinationGIF.gif";
-import gridExplainGIF from "../assets/gridExplainGIF.gif";
-import polarisExplainGIF from "../assets/polarisExplainGIF.gif";
-import angles from "../assets/angles.png";
-import angles2d from "../assets/angles2d.png";
-import reflectionTrick from "../assets/reflectionTrick.png";
-import sextant from "../assets/sextant.jpg";
-import kamal from "../assets/kamal.jpg";
-import sphericalTrig from "../assets/sphericalTrig.png";
-import sunStone from "../assets/sunStone.jpg";
-
 export const mediaItems = [
   {
     type: "image",
-    src: angles,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/angles.png",
     alt: "Celestial sphere showing altitude and azimuth angles",
     caption:
       "The celestial dome — showing how a star’s altitude and azimuth define its position in the sky relative to the observer.",
   },
   {
     type: "image",
-    src: angles2d,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/angles2d.png",
     alt: "2D diagram showing celestial triangle between star, zenith, and horizon",
     caption:
       "A simplified 2D view of the celestial triangle — the geometric foundation of celestial navigation.",
   },
   {
     type: "gif",
-    src: gridExplainGIF,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/gridExplainGIF.gif",
     alt: "Animated explanation of Earth's latitude and longitude grid",
     caption:
       "Earth’s coordinate grid — latitude and longitude lines mapping every point on the globe.",
   },
   {
     type: "gif",
-    src: greatCircleGIF,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/greatCircleGIF.gif",
     alt: "Animated great circle route",
     caption:
       "A great circle path — the shortest distance between two points on Earth, followed by aircraft and ships.",
   },
   {
     type: "gif",
-    src: declinationGIF,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/declinationGIF.gif",
     alt: "Animated diagram explaining celestial declination and Earth's tilt",
     caption:
       "Celestial declination — showing how a star’s position shifts with Earth’s axial tilt and orbit around the Sun.",
   },
   {
     type: "gif",
-    src: polarisExplainGIF,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/polarisExplainGIF.gif",
     alt: "Animated explanation of finding Polaris using the Big Dipper",
     caption:
       "Using the Big Dipper to find Polaris — the North Star, which almost exactly marks true north.",
   },
   {
     type: "image",
-    src: reflectionTrick,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/reflectionTrick.png",
     alt: "Diagram showing reflection trick to measure equal altitudes",
     caption:
       "The equal-altitude reflection trick — a simple way to find height of object respect to horizon",
   },
   {
     type: "image",
-    src: sextant,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/sextant.jpg",
     alt: "Astronaut using sextant for navigation",
     caption:
       "A modern sextant in use — measuring the angle between celestial bodies and the horizon, a timeless navigation method.",
   },
   {
     type: "image",
-    src: sphericalTrig,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/sphericalTrig.png",
     alt: "Mathematical diagram of spherical trigonometry on Earth’s surface",
     caption:
       "Spherical trigonometry — the mathematical framework behind converting celestial angles into Earth coordinates.",
   },
   {
     type: "image",
-    src: kamal,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/kamal.jpg",
     alt: "Traditional navigation instrument Kamal made of wood and string",
     caption:
       "The Kamal — an ancient Arabian tool that measures the altitude of Polaris using a wooden plate and string knots.",
   },
   {
     type: "image",
-    src: sunStone,
+    src: "https://github.com/Betelwise/Cel_Nav_Website/releases/download/assets/sunStone.jpg",
     alt: "Person holding a sunstone crystal under sunlight",
     caption:
       "Viking sunstone — a polarizing crystal that reveals the Sun’s direction even through clouds, a brilliant example of early optical navigation.",
