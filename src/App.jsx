@@ -8,6 +8,7 @@ import { BookShelf } from "./components/BookShelf.jsx";
 import { MediaGallery } from "./components/MediaGallery.jsx";
 import { Transcript } from "./components/Transcript.jsx";
 import { Footer } from "./components/Footer.jsx";
+import { FeedbackForm } from "./components/FeedbackForm.jsx";
 
 function App() {
   useEffect(() => {
@@ -58,6 +59,7 @@ function App() {
         <DirectionTricks />
         <SeminarJourney />
         <BookShelf />
+        <FeedbackForm />
         <MediaGallery />
         <Transcript />
       </main>

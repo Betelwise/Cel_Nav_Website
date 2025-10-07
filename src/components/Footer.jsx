@@ -6,7 +6,7 @@ export function Footer() {
         <p>
           Share your practice fixes, ask questions, or request the workbook
           updates by emailing
-          <a href="mailto:seminars@betelwise.com"> seminars@betelwise.com</a>.
+          <a href="mailto:zain@betelwise.com"> zain@betelwise.com</a>.
         </p>
         <p className="footer__note">
           Made for seminar attendees — optimized for phones, offline-friendly

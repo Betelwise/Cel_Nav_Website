@@ -312,6 +312,98 @@ main {
   gap: 1rem;
 }
 
+.feedback {
+  background: rgba(11, 18, 38, 0.88);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 28px 48px rgba(8, 12, 24, 0.45);
+  padding: 1.5rem clamp(1.25rem, 4vw, 2.25rem);
+}
+
+.feedback__form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.feedback__row {
+  display: grid;
+  gap: 1rem;
+}
+
+.feedback__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(233, 238, 255, 0.82);
+}
+
+.feedback__field span {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: rgba(178, 197, 255, 0.85);
+}
+
+.feedback__field input,
+.feedback__field select,
+.feedback__field textarea {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(9, 14, 32, 0.72);
+  color: #f8f9ff;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feedback__field textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.feedback__field input:focus,
+.feedback__field select:focus,
+.feedback__field textarea:focus {
+  outline: none;
+  border-color: rgba(130, 208, 255, 0.9);
+  box-shadow: 0 0 0 3px rgba(76, 203, 255, 0.22);
+}
+
+.feedback__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.feedback__hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: rgba(199, 210, 245, 0.68);
+}
+
+.feedback__status {
+  margin: 0;
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+}
+
+.feedback__status--success {
+  background: rgba(46, 208, 146, 0.16);
+  border: 1px solid rgba(88, 233, 185, 0.45);
+  color: rgba(177, 247, 214, 0.96);
+}
+
+.feedback__status--error {
+  background: rgba(255, 92, 129, 0.14);
+  border: 1px solid rgba(255, 118, 148, 0.42);
+  color: rgba(255, 189, 205, 0.92);
+}
+
 .info-card,
 .book-card {
   background: rgba(12, 18, 40, 0.8);
@@ -337,6 +429,14 @@ main {
 .book-card__focus {
   font-size: 0.85rem;
   color: rgba(154, 203, 255, 0.9);
+}
+
+.book-card__title {
+  font-size: 1.3rem;
+}
+
+.book-card__description {
+  font-size: 0.9rem;
 }
 
 .media-gallery {
@@ -495,6 +595,10 @@ main {
   .media-gallery {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
+
+  .feedback__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 960px) {
@@ -522,5 +626,23 @@ main {
   .hero__badge {
     bottom: -2rem;
     right: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .book-card__title {
+    font-size: 0.9rem;
+  }
+
+  .book-card__description {
+    font-size: 0.8rem;
+  }
+
+  .book-card__focus {
+    font-size: 0.75rem;
+  }
+
+  .card-carousel {
+    grid-auto-columns: 60%;
   }
 }

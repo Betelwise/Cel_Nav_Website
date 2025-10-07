@@ -15,8 +15,8 @@ export function BookShelf() {
         {books.map((book) => (
           <article key={book.title} className="book-card">
             <span className="book-card__format">{book.format}</span>
-            <h3>{book.title}</h3>
-            <p>{book.description}</p>
+            <h3 className="book-card__title">{book.title}</h3>
+            <p className="book-card__description">{book.description}</p>
             <p className="book-card__focus">Focus: {book.focus}</p>
             <a
               className="button button--primary"

@@ -1,7 +1,6 @@
 const stats = [
-  { label: "Session length", value: "90 minutes" },
+  { label: "Session length", value: "60 minutes" },
   { label: "Format", value: "Interactive + live demos" },
-  { label: "Best device", value: "Mobile first" },
 ];
 
 export function Hero() {
@@ -18,6 +17,9 @@ export function Hero() {
         <div className="hero__cta">
           <a className="button button--primary" href="#books">
             Download book pack
+          </a>
+          <a className="button button--ghost" href="#feedback">
+            Ask a question
           </a>
           <a className="button button--ghost" href="#transcript">
             Browse the transcript
