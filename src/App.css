@@ -105,6 +105,132 @@ main {
   gap: 0.75rem;
 }
 
+.hero__profile {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: rgba(15, 22, 45, 0.78);
+  border-radius: 18px;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 32px rgba(10, 16, 36, 0.35);
+}
+
+.hero__profile-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(160, 107, 255, 0.85),
+    rgba(78, 203, 255, 0.8)
+  );
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #050a1c;
+  font-size: 1.15rem;
+}
+
+.hero__profile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: rgba(220, 230, 255, 0.85);
+}
+
+.hero__profile-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero__profile-speaker {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.hero__badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.hero__badge-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.hero__badge-status--live {
+  background: rgba(255, 87, 109, 0.9);
+  color: #fff;
+}
+
+.hero__badge-status--live::before {
+  background: #fff;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+  animation: pulse 1.6s infinite;
+}
+
+.hero__badge-status--ended {
+  background: rgba(78, 203, 255, 0.85);
+  color: #04101f;
+}
+
+.hero__badge-status--ended::before {
+  background: rgba(4, 16, 31, 0.4);
+}
+
+.hero__badge-status--upcoming {
+  background: rgba(160, 107, 255, 0.85);
+  color: #050b1d;
+}
+
+.hero__badge-status--upcoming::before {
+  background: rgba(5, 11, 29, 0.4);
+}
+
+.hero__speaker-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(194, 206, 255, 0.8);
+  font-weight: 600;
+}
+
+.hero__profile-meta strong {
+  font-size: 1rem;
+  color: #f8f9ff;
+}
+
+.hero__status-note {
+  font-size: 0.78rem;
+  color: rgba(194, 205, 255, 0.75);
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -475,23 +601,37 @@ main {
   background: rgba(11, 16, 36, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  scroll-margin-top: 120px;
 }
 
-.transcript__item[open] summary {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.transcript__item.is-open {
+  border-color: rgba(120, 206, 255, 0.5);
+  box-shadow: 0 18px 36px rgba(6, 12, 28, 0.45);
 }
 
-.transcript__item summary {
-  list-style: none;
+.transcript__trigger {
+  width: 100%;
   padding: 1.1rem 1.2rem;
   display: flex;
   align-items: center;
   gap: 0.85rem;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
   cursor: pointer;
+  transition: background 0.25s ease;
 }
 
-.transcript__item summary::-webkit-details-marker {
-  display: none;
+.transcript__item.is-open .transcript__trigger {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.transcript__trigger:focus-visible {
+  outline: 2px solid rgba(120, 206, 255, 0.8);
+  outline-offset: 2px;
 }
 
 .transcript__emoji {
@@ -499,8 +639,35 @@ main {
 }
 
 .transcript__title {
+  flex: 1;
   font-weight: 600;
   font-size: 1.05rem;
+}
+
+.transcript__chevron {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-right: 2px solid rgba(220, 228, 255, 0.6);
+  border-bottom: 2px solid rgba(220, 228, 255, 0.6);
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.transcript__item.is-open .transcript__chevron {
+  transform: rotate(135deg);
+  border-color: rgba(120, 206, 255, 0.9);
+}
+
+.transcript__panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.transcript__item.is-open .transcript__panel {
+  max-height: 1200px;
+  opacity: 1;
 }
 
 .transcript__content {
