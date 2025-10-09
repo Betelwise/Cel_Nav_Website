@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import heroImage from "../assets/Hero.png";
 const SEMINAR_START = new Date("2025-10-08T12:30:00+05:00");
-const SEMINAR_END = new Date("2025-10-09T13:40:00+05:00");
+const SEMINAR_END = new Date("2025-10-08T13:40:00+05:00");
 
 function formatDuration(ms) {
   const clampedMs = Math.max(ms, 0);
