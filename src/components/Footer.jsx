@@ -9,8 +9,7 @@ export function Footer() {
           <a href="mailto:zain@betelwise.com"> zain@betelwise.com</a>.
         </p>
         <p className="footer__note">
-          Made for seminar attendees — optimized for phones, offline-friendly
-          resources, and quick reference in the field.
+          Made for seminar attendees, and quick reference in the field.
         </p>
       </div>
     </footer>

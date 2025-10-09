@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import heroImage from "../assets/Hero.png";
-const SEMINAR_START = new Date("2025-10-08T11:30:00+05:00");
-const SEMINAR_END = new Date("2025-10-09T12:40:00+05:00");
+const SEMINAR_START = new Date("2025-10-08T12:30:00+05:00");
+const SEMINAR_END = new Date("2025-10-09T13:40:00+05:00");
 
 function formatDuration(ms) {
   const clampedMs = Math.max(ms, 0);
@@ -113,8 +113,8 @@ export function Hero() {
               <strong>Zain</strong>
             </div>
             <span>
-              Quaid-i-Azam University Islamabad · Razmi Auditorium · 11:30 AM —
-              12:30 PM
+              Quaid-i-Azam University Islamabad · Razmi Auditorium · 12:30 PM —
+              1:30 PM
             </span>
             <span className="hero__status-note">{statusInfo.statusNote}</span>
           </div>
